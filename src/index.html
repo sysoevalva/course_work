@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<title>todo</title>
+</head>
+<body>
+<div class="wrapper">
+	<div class="app">
+		<div class="app__header">
+			<div class="app__title"><span class="app__title-text">To Do List</span></div>
+			<div class="app__info">
+				<div class="app__info-item">
+					<span class="app__info-text">All</span>
+					<span class="app__info-number" id="js-all-tasks"></span>
+				</div>
+				<div class="app__info-item">
+					<span class="app__info-text">Done</span>
+					<span class="app__info-number_done" id="js-done-tasks"></span>
+				</div>
+			</div>
+		</div>
+		<div class="app__body">
+			<ul class="app__list" id="app__list"></ul>
+			
+		</div>
+		<div class="app__footer">
+			<input class="app__task-new" id="app__task-new" placeholder="What do you want to do?">
+			<span id="add-btn" class="add-btn">Add</span>
+		</div>
+	</div>
+</div>
+
+<script src="dist/main.js"></script>
+</body>
+</html>

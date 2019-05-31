@@ -1,0 +1,29 @@
+{
+  "name": "coursework",
+  "version": "1.0.0",
+  "description": "Course work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "npx webpack --config webpack.config.js --mode development",
+    "build-prod": "npx webpack --config webpack.config.js --mode production",
+    "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbesaeva/course_work.git"
+  },
+  "author": "Daliya Besaeva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dbesaeva/course_work/issues"
+  },
+  "homepage": "https://github.com/dbesaeva/course_work#readme",
+  "devDependencies": {
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.4.5",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  }
+}
