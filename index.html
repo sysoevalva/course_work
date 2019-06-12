@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <title>Todo List</title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1 id="title">Todo List</h1>
+        
+        <form id="todoBox">
+            <label for="todoTitle">Title :</label>   
+            <input type="text" name="todoTitle" id="todoTitle"><br>
+            
+            <label for="todoText">Content : </label>
+            <input type="text" name="todoText" id="todoText"><br>
+            
+            <input type="submit" id="todoSubmit" value="Submit">
+        </form>
+
+        
+        <div id="todoSorter">
+            <label><input type="radio" id="btn0" value="0" name="sort" checked><span class="fas fa-list-ul fa-1x"></span></label>
+            <label><input type="radio" id="btn1" value="1" name="sort"><span class="far fa-circle fa-1x"></span></label>
+            <label><input type="radio" id="btn2" value="2" name="sort"><span class="far fa-check-circle fa-1x"></span></label>
+        </div>
+        
+        <hr>
+        
+        <ul id="todoList"></ul>
+    </div>
+    
+</body>
+</html>
