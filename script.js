@@ -5,7 +5,7 @@ todoList = document.querySelector('#todoList'),
 todoSorter = document.querySelector("#todoSorter"),
 todoItems = JSON.parse(localStorage.getItem('todo')) || [];
 
-//取得項目
+
 function getItems(){
     todoList.innerHTML ='';
 
@@ -56,7 +56,7 @@ function getItems(){
 }
 
 
-//新增項目
+
 function addItem(e){
     e.preventDefault();
     if(todoTitle.value == ''){alert('請輸入內容!'); return}
@@ -77,7 +77,7 @@ function addItem(e){
 }
 
 
-//刪除項目
+
 function removeItem(e){
     if(e.target.classList[0] !== 'todoDel'){return};
     let idx = parseInt(e.target.dataset.idx);
@@ -87,7 +87,7 @@ function removeItem(e){
 }
 
 
-//標示完成&未完成
+
 function finishItem(e){
     if(e.target.classList[0] !== 'todoFinish'){return};
     let idx = parseInt(e.target.dataset.idx);
@@ -106,7 +106,7 @@ function finishItem(e){
 }
 
 
-//修改項目
+
 function editItem(e){
     if(e.target.className !== "listText"){return};
     e.target.parentNode.nextSibling.nextSibling.style.display = "block";
@@ -134,12 +134,11 @@ function editItem(e){
 
 
 
-//篩選項目列表
 function sorting(e){
     if(e.target.nodeName == 'INPUT'){
         switch (e.target.defaultValue){
             
-            //顯示未完成
+            
             case "1":
             // console.log(todoList.childNodes);
             todoList.childNodes.forEach(el => {
@@ -151,7 +150,7 @@ function sorting(e){
             });
             break;
             
-            //顯示已完成
+            
             case "2":
             todoList.childNodes.forEach(el => {
                 if(el.className == " notDone"){
@@ -162,7 +161,7 @@ function sorting(e){
             });
             break;
             
-            //全部
+            
             default:
                 todoList.childNodes.forEach(el => {
                     if(el.className){
