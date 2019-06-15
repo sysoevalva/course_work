@@ -1,18 +1,18 @@
-let todoTitle = document.querySelector('#todoTitle'),
+let todoTitle = document.querySelector('#todoTitle'),//возвращает первый элемент в документе
 todoText = document.querySelector('#todoText'),
 todoSubmit = document.querySelector('#todoSubmit'),
 todoList = document.querySelector('#todoList'),
 todoSorter = document.querySelector("#todoSorter"),
-todoItems = JSON.parse(localStorage.getItem('todo')) || [];
+todoItems = JSON.parse(localStorage.getItem('todo')) || [];// работы с локальным хранилищем предназначен встроенный в браузер объект localStorage
 
 
 function getItems(){
-    todoList.innerHTML ='';
+    todoList.innerHTML ='';//позволяет получить и изменить текст элемента
 
     for(let i=0;i<todoItems.length;i++){
         let textTag = '',sortTag = '';
 
-        if(todoItems[i].status === 0 ){
+        if(todoItems[i].status === 0 ){//иконки
             textTag = "notDone";
             iconTag = "fa-circle";
         }else{
@@ -26,7 +26,7 @@ function getItems(){
             sortTag= "";
         }
 
-        let sentence = `
+       let sentence = `
             <li class="${sortTag} ${textTag}">
                 <div class="listText" data-idx='${i}'>
                     ${todoItems[i].title}
@@ -58,9 +58,9 @@ function getItems(){
 
 
 function addItem(e){
-    e.preventDefault();
-    if(todoTitle.value == ''){alert('請輸入內容!'); return}
-    let creatTime = new Date().toLocaleDateString();
+    e.preventDefault();отмены действия браузера
+    if(todoTitle.value == ''){alert('Нечего вводить!'); return}
+    let creatTime = new Date().toLocaleDateString();//дата
     let todo = {
         title:todoTitle.value,
         text:todoText.value,
@@ -69,8 +69,8 @@ function addItem(e){
         creatTime:creatTime,
         finishTime:""
     }
-    todoItems.push(todo);
-    localStorage.setItem('todo',JSON.stringify(todoItems));
+    todoItems.push(todo);//добавления значений в массив
+    localStorage.setItem('todo',JSON.stringify(todoItems));//преобразует значение JavaScript в строку JSON
     todoTitle.value = '';
     todoText.value = '';
     getItems();
@@ -79,9 +79,9 @@ function addItem(e){
 
 
 function removeItem(e){
-    if(e.target.classList[0] !== 'todoDel'){return};
-    let idx = parseInt(e.target.dataset.idx);
-    todoItems.splice(idx,1);
+    if(e.target.classList[0] !== 'todoDel'){return};//переходим к классу
+    let idx = parseInt(e.target.dataset.idx);//возвращает целое число  data-атрибутов
+    todoItems.splice(idx,1);//удаляем с idx 1 значение
     localStorage.setItem('todo',JSON.stringify(todoItems));
     getItems();
 }
@@ -91,11 +91,11 @@ function removeItem(e){
 function finishItem(e){
     if(e.target.classList[0] !== 'todoFinish'){return};
     let idx = parseInt(e.target.dataset.idx);
-    let finishTime = new Date().toLocaleDateString();
+    let finishTime = new Date().toLocaleDateString();//Возвращает дату в виде строки
 
     if(todoItems[idx].status == 0){
         todoItems[idx].status = 1;
-        todoItems[idx].finishTime = finishTime;
+        todoItems[idx].finishTime = finishTime;//+ тогда выводим дату
     }else{
         todoItems[idx].status = 0;
         todoItems[idx].finishTime = "";
