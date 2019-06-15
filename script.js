@@ -58,7 +58,7 @@ function getItems(){
 
 
 function addItem(e){
-    e.preventDefault();отмены действия браузера
+    e.preventDefault();//отмены действия браузера
     if(todoTitle.value == ''){alert('Нечего вводить!'); return}
     let creatTime = new Date().toLocaleDateString();//дата
     let todo = {
