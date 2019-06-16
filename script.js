@@ -109,7 +109,7 @@ function finishItem(e){
 
 function editItem(e){
     if(e.target.className !== "listText"){return};
-    e.target.parentNode.nextSibling.nextSibling.style.display = "block";
+    e.target.parentNode.nextSibling.nextSibling.style.display = "block";//отображаем блок со списком
 
     let idx = e.target.dataset.idx,
     editTitle = document.querySelectorAll(".editTitle"),
@@ -120,8 +120,8 @@ function editItem(e){
 
     
     let editSubmit = document.querySelectorAll(".editSubmit");
-    editSubmit.forEach((el)=>{
-        el.addEventListener('click',function(){
+    editSubmit.forEach((el)=>{//for позволяет последовательно перебрать все элементы массива
+        el.addEventListener('click',function(){//регистрирует определенный обработчик события
             todoItems[idx].title = editTitle[idx].value;
             todoItems[idx].text = editText[idx].value;
             
@@ -135,13 +135,13 @@ function editItem(e){
 
 
 function sorting(e){
-    if(e.target.nodeName == 'INPUT'){
-        switch (e.target.defaultValue){
+    if(e.target.nodeName == 'INPUT'){//при изменении значения текстового элемента
+        switch (e.target.defaultValue){//Выражение, возвращающее один из объектов из списка 
             
             
             case "1":
             // console.log(todoList.childNodes);
-            todoList.childNodes.forEach(el => {
+            todoList.childNodes.forEach(el => {//хранит дочерние элементы
                 if(el.className == " done"){
                     el.style.display = " none";
                 }else if(el.className == " notDone" || el.className == "editForm"){
