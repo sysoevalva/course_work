@@ -1,0 +1,6 @@
+sudo: false
+
+language: javascript
+
+notifications: 
+    email: false
